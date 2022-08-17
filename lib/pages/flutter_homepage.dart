@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/widgets/customDrawer.dart';
 
 class FlutterHomePage extends StatefulWidget {
   const FlutterHomePage({Key? key}) : super(key: key);
@@ -12,23 +13,20 @@ class _FlutterHomePageState extends State<FlutterHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter'),
+        title: const Text('Flutter'),
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
+      drawer: const CustomDrawer(),
+      body: Column(
         children: [
-          Card(
-            child: Center(
-              child: Text('Widgets'),
-            ),
+          ListTile(
+            title: Text('Material Design 2'),
           ),
-          Card(
-            child: Center(
-              child: Text('Packages'),
-            ),
+          ListTile(
+            title: Text('Material Design 3'),
           ),
         ],
       ),
     );
   }
 }
+
