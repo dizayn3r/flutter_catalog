@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/routes/Routes%20Name/widget_route_name.dart';
 import 'package:flutter_catalog/widgets/customDrawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,6 +29,7 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
       'Styling',
       'Text',
     ];
+
     List<String> subtitle = [
       'Make your app accessible.',
       'Animations for your app.',
@@ -45,6 +47,23 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
       'Display and style text.'
     ];
 
+    List<String> goto = [
+     WidgetName.accessibility,
+     WidgetName.animationMotion,
+     WidgetName.assetsImagesIcons,
+     WidgetName.async,
+     WidgetName.basics,
+     WidgetName.cupertino,
+     WidgetName.input,
+     WidgetName.touchRoute,
+     WidgetName.layout,
+     WidgetName.materialComponent,
+     WidgetName.visual,
+     WidgetName.scroll,
+     WidgetName.styling,
+     WidgetName.text,
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Widgets'),
@@ -55,7 +74,7 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
         itemCount: title.length,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            onTap: () => Navigator.of(context).pushNamed('/$index'),
+            onTap: () => Navigator.pushNamed(context, goto[index]),
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)),

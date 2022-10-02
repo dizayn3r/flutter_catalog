@@ -18,7 +18,7 @@ import 'package:flutter_catalog/pages/widgets/visual_effect/visual_effect.dart';
 import 'package:flutter_catalog/pages/widgets/widget_homepage.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../pages/packages/flip_card/flip_card_demo.dart';
+import 'Routes Name/widget_route_name.dart';
 
 class Routes {
   static const homePage = '/homePage';
@@ -55,33 +55,33 @@ Route? getRoute(RouteSettings settings) {
       return buildRoute(const PackageHomePage(), settings);
 
       //--------------------Widgets-------------------
-    case Routes.accessibility:
+    case WidgetName.accessibility:
       return buildRoute(const Accessibility(title: 'Accessibility'), settings);
-    case Routes.animationMotion:
+    case WidgetName.animationMotion:
       return buildRoute(const AnimationMotion(title: 'Animation'), settings);
-    case Routes.assetsImagesIcons:
+    case WidgetName.assetsImagesIcons:
       return buildRoute(const AssetsImageIcon(title: 'Assets, Image and Icons'), settings);
-    case Routes.async:
+    case WidgetName.async:
       return buildRoute(const AsyncHomePage(title: 'Async'), settings);
-    case Routes.basics:
+    case WidgetName.basics:
       return buildRoute(const BasicWidget(title: 'Basic Widgets'), settings);
-    case Routes.cupertino:
+    case WidgetName.cupertino:
       return buildRoute(const CupertinoHomePage(title: 'Cupertino Widgets'), settings);
-    case Routes.input:
+    case WidgetName.input:
       return buildRoute(const Input(title: 'Input'), settings);
-    case Routes.touchRoute:
+    case WidgetName.touchRoute:
       return buildRoute(const TouchRoute(title:'Touch Route'), settings);
-    case Routes.layout:
+    case WidgetName.layout:
       return buildRoute(const LayoutHomePage(title: 'Layout widgets'), settings);
-    case Routes.materialComponent:
+    case WidgetName.materialComponent:
       return buildRoute(const MaterialComponent(title:'Material components'), settings);
-    case Routes.visual:
+    case WidgetName.visual:
       return buildRoute(const VisualEffect(title: 'Visual effects'), settings);
-    case Routes.scroll:
+    case WidgetName.scroll:
       return buildRoute(const Scrolling(title: 'Scrolling'), settings);
-    case Routes.styling:
+    case WidgetName.styling:
       return buildRoute(const Styling(title: 'Styling'), settings);
-    case Routes.text:
+    case WidgetName.text:
       return buildRoute(const TextHomePage(title:'Text'), settings);
     default:
       return null;

@@ -23,20 +23,24 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             centerTitle: true,
             titleTextStyle: GoogleFonts.quicksand(
-                fontSize: 20.0, fontWeight: FontWeight.bold),
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: AppColor.white),
           )
           // useMaterial3: true,
           ),
       darkTheme: ThemeData(
-        primarySwatch: AppColor.red,
-        brightness: Brightness.dark,
+          primarySwatch: AppColor.red,
+          brightness: Brightness.dark,
           appBarTheme: AppBarTheme(
             centerTitle: true,
             titleTextStyle: GoogleFonts.quicksand(
-                fontSize: 20.0, fontWeight: FontWeight.bold),
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: AppColor.white),
           )
-        // useMaterial3: true,
-      ),
+          // useMaterial3: true,
+          ),
       themeMode: ThemeMode.system,
       title: 'Flutter Catalog',
       initialRoute: Routes.homePage,
