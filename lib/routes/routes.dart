@@ -9,6 +9,10 @@ import 'package:flutter_catalog/pages/widgets/basics/basicsWidgets.dart';
 import 'package:flutter_catalog/pages/widgets/cupertino/cupertino.dart';
 import 'package:flutter_catalog/pages/widgets/input/input.dart';
 import 'package:flutter_catalog/pages/widgets/layout/layout.dart';
+import 'package:flutter_catalog/pages/widgets/layout/multi_child/Multi%20Child%20Widgets/Column/column_demo.dart';
+import 'package:flutter_catalog/pages/widgets/layout/multi_child/multi_child_layout.dart';
+import 'package:flutter_catalog/pages/widgets/layout/single_child/single_child_layout.dart';
+import 'package:flutter_catalog/pages/widgets/layout/sliver/sliver.dart';
 import 'package:flutter_catalog/pages/widgets/material_components/material_components.dart';
 import 'package:flutter_catalog/pages/widgets/scrolling/scrolling.dart';
 import 'package:flutter_catalog/pages/widgets/styling/styling.dart';
@@ -73,6 +77,14 @@ Route? getRoute(RouteSettings settings) {
       return buildRoute(const TouchRoute(title:'Touch Route'), settings);
     case WidgetName.layout:
       return buildRoute(const LayoutHomePage(title: 'Layout widgets'), settings);
+    case WidgetName.singleChildLayout:
+      return buildRoute(const SingleChildLayout(), settings);
+    case WidgetName.multiChildLayout:
+      return buildRoute(const MultiChildLayout(), settings);
+    case WidgetName.columnLayout:
+      return buildRoute(const ColumnDemo(), settings);
+    case WidgetName.sliverLayout:
+      return buildRoute(const SliverLayout(), settings);
     case WidgetName.materialComponent:
       return buildRoute(const MaterialComponent(title:'Material components'), settings);
     case WidgetName.visual:
@@ -83,6 +95,7 @@ Route? getRoute(RouteSettings settings) {
       return buildRoute(const Styling(title: 'Styling'), settings);
     case WidgetName.text:
       return buildRoute(const TextHomePage(title:'Text'), settings);
+
     default:
       return null;
   }

@@ -13,6 +13,7 @@ class WidgetHomePage extends StatefulWidget {
 class _WidgetHomePageState extends State<WidgetHomePage> {
   @override
   Widget build(BuildContext context) {
+
     List<String> title = [
       'Accessibility',
       'Animation',
@@ -95,7 +96,7 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
                     Text(
                       subtitle[index],
                       style: GoogleFonts.quicksand(
-                        fontSize: 14.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.normal,
                       ),
                     ),

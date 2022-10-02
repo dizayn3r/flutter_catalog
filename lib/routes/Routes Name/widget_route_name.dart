@@ -13,4 +13,9 @@ class WidgetName{
   static const scroll = '/scroll';
   static const styling = '/styling';
   static const text = '/text';
+
+  static const singleChildLayout = '/singleChildLayout';
+  static const multiChildLayout = '/multiChildLayout';
+  static const columnLayout = '/columnLayout';
+  static const sliverLayout = '/sliverLayout';
 }

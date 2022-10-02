@@ -1,40 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/routes/Routes%20Name/widget_route_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../routes/Routes Name/widget_route_name.dart';
-
-class LayoutHomePage extends StatefulWidget {
-  final String title;
-  const LayoutHomePage({Key? key, required this.title}) : super(key: key);
+class MultiChildLayout extends StatefulWidget {
+  const MultiChildLayout({Key? key}) : super(key: key);
 
   @override
-  State<LayoutHomePage> createState() => _LayoutHomePageState();
+  State<MultiChildLayout> createState() => _MultiChildLayoutState();
 }
 
-class _LayoutHomePageState extends State<LayoutHomePage> {
+class _MultiChildLayoutState extends State<MultiChildLayout> {
   @override
   Widget build(BuildContext context) {
     List<String> title = [
-      'Single-child Layout widgets',
-      'Multi-child Layout widgets',
-      'Sliver widgets',
+      'Column',
+      'Custom Multi Child Layout',
+      'Flow',
     ];
 
     List<String> subtitle = [
-      'Align, Aspect Ratio, Baseline, Center, Constrained Box, Container, Custom Single Child Layout, Expanded, Fitted Box, Fractionally Sized Box, Intrinsic Height, Intrinsic Width, Limited Box, Offstage, Overflow Box, Padding, Sized Box, Sized Overflow Box, Transform',
-      'Column, Custom Multi Child Layout, Flow, GridView, Indexed Stack, Layout Builder, List Body, ListView, Row, Stack, Table, Wrap',
-      'Cupertino Sliver Navigation Bar, Custom Scroll View, Sliver App Bar, Sliver Child Build Delegate, Sliver Child List Delegate, Sliver Fixed Extended List, Sliver Grid, Sliver List, Sliver Padding, Sliver Persistent Header, Sliver to Box Adapter',
-    ];
+      'Layout a list of child widgets in the vertical direction',
+      'A widget that uses a delegate to size and position multiple children',
+      'A widget that implements the flow layout algorithm',
+      ];
 
     List<String> goto = [
-      WidgetName.singleChildLayout,
-      WidgetName.multiChildLayout,
-      WidgetName.sliverLayout,
+      WidgetName.columnLayout,
+      WidgetName.columnLayout,
+      WidgetName.columnLayout,
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Layout Widget'),
+        title: const Text('Multi Child Layout'),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(8.0),
