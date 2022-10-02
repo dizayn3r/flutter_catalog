@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/packages/flip_card/flip_card_demo.dart';
+import 'package:flutter_catalog/pages/packages/flutter_easyloading_demo/flutter_easyloading_demo.dart';
 import 'package:flutter_catalog/pages/packages/fluttertoast_demo/fluttertoast_demo.dart';
 import 'package:flutter_catalog/widgets/customDrawer.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class PackageHomePage extends StatefulWidget {
   const PackageHomePage({Key? key}) : super(key: key);
@@ -15,16 +15,18 @@ class PackageHomePage extends StatefulWidget {
 class _PackageHomePageState extends State<PackageHomePage> {
   @override
   Widget build(BuildContext context) {
-    List<String> _packages = [
+    List<String> packages = [
       'flip_card',
       'fluttertoast',
       'english_words',
+      'flutter_easyloading',
     ];
 
-    List<String> _description = [
+    List<String> description = [
       'A component that provides a flip card animation. It could be used for hiding and showing details of a product.',
       'Toast Library for Flutter.',
       'A package containing the most ~5000 used English words and some utility functions.',
+      'Loading progress',
     ];
 
     return Scaffold(
@@ -32,47 +34,27 @@ class _PackageHomePageState extends State<PackageHomePage> {
         title: const Text('Packages'),
       ),
       drawer: const CustomDrawer(),
-      body: GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 8.0,
-        crossAxisSpacing: 8.0,
-        childAspectRatio: 3.0,
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          //Flip Card
-          gridCard(
-            onClicked: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const FlipCardDemo(),
-              ),
-            ),
-            title: _packages[0],
-            description: _description[0],
-          ),
-
-        //  Fluttertoast
-          gridCard(
-            onClicked: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const FluttertoastDemo(),
-              ),
-            ),
-            title: _packages[1],
-            description: _description[1],
-          ),
-        ],
+      body: ListView.builder(
+        padding: const EdgeInsets.all(8.0),
+        itemCount: packages.length,
+        itemBuilder: (context, index) {
+          return listTile(
+            onClicked: () {},
+            title: packages[index],
+            description: description[index],
+          );
+        },
       ),
     );
   }
 
-  Widget gridCard(
+  Widget listTile(
       {required VoidCallback onClicked,
       required String title,
       required String description}) {
     return GestureDetector(
       onTap: onClicked,
       child: Card(
-        elevation: 2.0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         child: Container(
           padding: const EdgeInsets.all(16.0),
@@ -82,15 +64,15 @@ class _PackageHomePageState extends State<PackageHomePage> {
               Text(
                 title,
                 style: GoogleFonts.quicksand(
-                  fontSize: 20.0,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Divider(),
+              Divider(color: Theme.of(context).primaryColor),
               Text(
                 description,
                 style: GoogleFonts.quicksand(
-                  fontSize: 18.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.normal,
                 ),
               ),

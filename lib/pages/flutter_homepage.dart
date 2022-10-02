@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/widgets/customDrawer.dart';
+import 'package:flutter_progress_hud/flutter_progress_hud.dart';
+
+class FlutterHomeInit extends StatefulWidget {
+  const FlutterHomeInit({Key? key}) : super(key: key);
+
+  @override
+  State<FlutterHomeInit> createState() => _FlutterHomeInitState();
+}
+
+class _FlutterHomeInitState extends State<FlutterHomeInit> {
+  @override
+  Widget build(BuildContext context) {
+    return ProgressHUD(child: const FlutterHomePage());
+  }
+}
+
 
 class FlutterHomePage extends StatefulWidget {
   const FlutterHomePage({Key? key}) : super(key: key);
@@ -17,7 +33,7 @@ class _FlutterHomePageState extends State<FlutterHomePage> {
       ),
       drawer: const CustomDrawer(),
       body: Column(
-        children: [
+        children: const [
           ListTile(
             title: Text('Material Design 2'),
           ),

@@ -48,7 +48,7 @@ class Routes {
 Route? getRoute(RouteSettings settings) {
   switch (settings.name) {
     case Routes.homePage:
-      return buildRoute(const FlutterHomePage(), settings);
+      return buildRoute(const FlutterHomeInit(), settings);
     case Routes.widgetHomePage:
       return buildRoute(const WidgetHomePage(), settings);
     case Routes.packageHomePage:

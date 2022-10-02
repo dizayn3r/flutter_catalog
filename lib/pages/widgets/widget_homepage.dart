@@ -12,7 +12,7 @@ class WidgetHomePage extends StatefulWidget {
 class _WidgetHomePageState extends State<WidgetHomePage> {
   @override
   Widget build(BuildContext context) {
-    List<String> _title = [
+    List<String> title = [
       'Accessibility',
       'Animation',
       'Assets, Images and Icons',
@@ -28,7 +28,7 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
       'Styling',
       'Text',
     ];
-    List<String> _subtitle = [
+    List<String> subtitle = [
       'Make your app accessible.',
       'Animations for your app.',
       'Manage assets, images and icons.',
@@ -50,38 +50,33 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
         title: const Text('Widgets'),
       ),
       drawer: const CustomDrawer(),
-      body: GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 8.0,
-        crossAxisSpacing: 8.0,
-        childAspectRatio: 3.0,
-        padding: const EdgeInsets.all(16.0),
-        children: List.generate(
-          _title.length,
-          (index) => GestureDetector(
+      body: ListView.builder(
+        padding: const EdgeInsets.all(8.0),
+        itemCount: title.length,
+        itemBuilder: (BuildContext context, int index) {
+          return GestureDetector(
             onTap: () => Navigator.of(context).pushNamed('/$index'),
             child: Card(
-              elevation: 2.0,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0)
-              ),
+                  borderRadius: BorderRadius.circular(8.0)),
               child: Container(
                 padding: const EdgeInsets.all(16.0),
+                alignment: Alignment.center,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      _title[index],
+                      title[index],
                       style: GoogleFonts.quicksand(
-                        fontSize: 20.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const Divider(),
+                    Divider(color: Theme.of(context).primaryColor),
                     Text(
-                      _subtitle[index],
+                      subtitle[index],
                       style: GoogleFonts.quicksand(
-                        fontSize: 18.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
@@ -89,8 +84,8 @@ class _WidgetHomePageState extends State<WidgetHomePage> {
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

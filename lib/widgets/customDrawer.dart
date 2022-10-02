@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -9,14 +10,14 @@ class CustomDrawer extends StatelessWidget {
         DrawerHeader(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              FlutterLogo(
+            children: [
+              const FlutterLogo(
                 size: 100.0,
                 style: FlutterLogoStyle.markOnly,
               ),
               Text(
                 'Flutter',
-                style: TextStyle(fontSize: 24.0),
+                style: GoogleFonts.quicksand(fontSize: 20.0,fontWeight:  FontWeight.bold),
               ),
             ],
           ),
@@ -34,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       leading: Icon(icon),
-      title: Text(text),
+      title: Text(text,style: GoogleFonts.quicksand(fontSize: 16.0,fontWeight:  FontWeight.w600),),
     );
   }
 
