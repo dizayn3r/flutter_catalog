@@ -18,17 +18,17 @@ class MyApp extends StatelessWidget {
       builder: EasyLoading.init(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: AppColor.red,
-          brightness: Brightness.light,
-          appBarTheme: AppBarTheme(
-            centerTitle: true,
-            titleTextStyle: GoogleFonts.quicksand(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: AppColor.white),
-          )
-          // useMaterial3: true,
+        primarySwatch: AppColor.red,
+        brightness: Brightness.light,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          titleTextStyle: GoogleFonts.quicksand(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
           ),
+        ),
+        useMaterial3: true,
+      ),
       darkTheme: ThemeData(
           primarySwatch: AppColor.red,
           brightness: Brightness.dark,
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           )
           // useMaterial3: true,
           ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       title: 'Flutter Catalog',
       initialRoute: Routes.homePage,
       onGenerateRoute: (route) => getRoute(route),

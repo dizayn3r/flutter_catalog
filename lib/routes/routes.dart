@@ -18,7 +18,7 @@ import 'package:flutter_catalog/pages/widgets/visual_effect/visual_effect.dart';
 import 'package:flutter_catalog/pages/widgets/widget_homepage.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'Routes Name/widget_route_name.dart';
+import 'routes_name/widget_route_name.dart';
 
 class Routes {
   static const homePage = '/homePage';
@@ -42,7 +42,6 @@ class Routes {
   static const text = '/13';
 //
 //
-
 }
 
 Route? getRoute(RouteSettings settings) {
@@ -54,27 +53,31 @@ Route? getRoute(RouteSettings settings) {
     case Routes.packageHomePage:
       return buildRoute(const PackageHomePage(), settings);
 
-      //--------------------Widgets-------------------
+    //--------------------Widgets-------------------
     case WidgetName.accessibility:
       return buildRoute(const Accessibility(title: 'Accessibility'), settings);
     case WidgetName.animationMotion:
       return buildRoute(const AnimationMotion(title: 'Animation'), settings);
     case WidgetName.assetsImagesIcons:
-      return buildRoute(const AssetsImageIcon(title: 'Assets, Image and Icons'), settings);
+      return buildRoute(
+          const AssetsImageIcon(title: 'Assets, Image and Icons'), settings);
     case WidgetName.async:
       return buildRoute(const AsyncHomePage(title: 'Async'), settings);
     case WidgetName.basics:
       return buildRoute(const BasicWidget(title: 'Basic Widgets'), settings);
     case WidgetName.cupertino:
-      return buildRoute(const CupertinoHomePage(title: 'Cupertino Widgets'), settings);
+      return buildRoute(
+          const CupertinoHomePage(title: 'Cupertino Widgets'), settings);
     case WidgetName.input:
       return buildRoute(const Input(title: 'Input'), settings);
     case WidgetName.touchRoute:
-      return buildRoute(const TouchRoute(title:'Touch Route'), settings);
+      return buildRoute(const TouchRoute(title: 'Touch Route'), settings);
     case WidgetName.layout:
-      return buildRoute(const LayoutHomePage(title: 'Layout widgets'), settings);
+      return buildRoute(
+          const LayoutHomePage(title: 'Layout widgets'), settings);
     case WidgetName.materialComponent:
-      return buildRoute(const MaterialComponent(title:'Material components'), settings);
+      return buildRoute(
+          const MaterialComponent(title: 'Material components'), settings);
     case WidgetName.visual:
       return buildRoute(const VisualEffect(title: 'Visual effects'), settings);
     case WidgetName.scroll:
@@ -82,7 +85,7 @@ Route? getRoute(RouteSettings settings) {
     case WidgetName.styling:
       return buildRoute(const Styling(title: 'Styling'), settings);
     case WidgetName.text:
-      return buildRoute(const TextHomePage(title:'Text'), settings);
+      return buildRoute(const TextHomePage(title: 'Text'), settings);
     default:
       return null;
   }
